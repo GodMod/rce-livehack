@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="img/apple_touch_icon_57x57_precomposed.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple_touch_icon_72x72_precomposed.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple_touch_icon_114x114_precomposed.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple_touch_icon_144x144_precomposed.png"/>
+
+	<title>Ping Example</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link href="css/jquery_fancybox.css" rel="stylesheet">
+
+	<!-- Custom styles -->
+	<link href="css/daimler-bootstrap-theme.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================== Header =================== -->
+<header class="bs-docs-nav">
+	<div class="container page-header">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 page-header-nav">
+				<nav class="meta-nav">
+					<ul>
+						<li class="meta-standard">
+							<a href="#" class="privacy-disclaimer"><span class="hidden-xs">Anbieter/Datenschutz</span></a>
+						</li>
+					</ul>
+				</nav>
+				<div class="info-layer-wrapper">
+					<div id="privacyPolicy" style="display: none;">
+						<div class="info-dialog">
+							<div class="info-content">
+								<div class="info-header">
+									<p class="info-title">Anbieter/Datenschutz</p>
+								</div>
+								<div class="info-body">
+									<div class="company-info">
+										<p class="headline">Daimler AG</p>
+										<p>
+											Mercedesstraße 137<br>
+											70327 Stuttgart<br>
+											Deutschland
+										</p>
+										<p>
+											Tel.: <a href="tel:+49 711 17 0">+49 711 17 0</a><br>
+											E-Mail: <a href="mailto:dialog@daimler.com">dialog@daimler.com</a>
+										</p>
+									</div>
+									<div class="legal-info">
+										<p><strong>Vertreten durch den Vorstand:</strong> Dieter Zetsche (Vorsitzender),
+											Wolfgang Bernhard, Renata Jungo Brüngger, Ola Källenius, Wilfried Porth,
+											Hubertus Troska, Bodo Uebber, Thomas Weber</p>
+										<p><strong>Vorsitzender des Aufsichtsrats:</strong> Manfred Bischoff</p>
+										<p>Handelsregister beim Amtsgericht Stuttgart, Nr. HRB 19360
+											Umsatzsteueridentifikationsnummer: DE 81 25 26 315 </p>
+									</div>
+									<div class="links">
+										<ul>
+											<li><a href="http://www.daimler.com/anbieter/" target="_blank">Rechtliche
+												Hinweise</a></li>
+											<li><a href="http://www.daimler.com/cookies/" target="_blank">Cookies</a>
+											</li>
+											<li><a href="http://www.daimler.com/datenschutz/" target="_blank">Datenschutz</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-6 col-md-6 logo-wrapper">
+				<a target="_self" href="index.html">
+					<img alt="DAIMLER" src="img/img_logo_daimler_svg.svg" class="logo-daimler-svg">
+					<!--[if lt IE 9]>
+					<img src="img/img_logo_daimler_png.png" alt="DAIMLER">
+					<![endif]-->
+				</a>
+			</div>
+			<div class="buttons-wrapper">
+				<a href="#" class="btn offcanvas-toggle" style="display: none;"></a>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 page-title-wrapper">
+			</div>
+
+		</div>
+		<nav id="bs-navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+			</ul>
+		</nav>
+	</div>
+
+</header>
+<!-- ============================================= -->
+
+
+<!-- ================== Content ================== -->
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h1>Ping utility</h1>
+			<p>Enter IP address to ping!</p>
+		</div>
+
+		<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+			<div class="row">
+				<form action="">
+				<input type="text" name="ip" /> <input type="submit" value="Ping" />				
+				</form>
+			</div>
+			<div class="row">
+			<?php
+			
+			if($_GET['ip']){
+				$val = exec("ping -c 4 ".$_GET['ip']);
+				echo "<pre>".$val."</pre>";
+			}
+		?>
+			</div>
+		</div>
+
+		
+	</div>
+
+</div>
+<!-- ============================================= -->
+
+<!-- ================== Footer =================== -->
+<footer>
+	<div class="footer-content-wrapper">
+		<!-- Quick Links -->
+		<div class="container footer-quicklinks">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 quicklinks-wrapper">
+					<ul>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Copyright -->
+		<div class="container footer-copy">
+			<div class="row">
+				<div class="col-md-12 col-lg-12 text-center">&copy; 2018 Daimler AG. Alle Rechte vorbehalten.</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- ============================================= -->
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery-1.12.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/vendor/jquery_fancybox_pack.js"></script>
+<script src="js/daimler_main.js"></script>
+
+</body>
+</html>
