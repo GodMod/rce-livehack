@@ -128,8 +128,8 @@
 			<?php
 			
 			if($_GET['ip']){
-				$val = exec("ping -c 4 ".$_GET['ip']);
-				echo "<pre>".$val."</pre>";
+				$val = shell_exec("ping -c 4 ".$_GET['ip']);
+				echo "<br /><br /><pre>".$val."</pre>";
 			}
 		?>
 			</div>
